@@ -1,5 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import Menu from "./Menu";
+import SearchBar from "./SearchBar";
+import NavIcons from "./NavIcons";
 
 const Navbar = () => {
   return (
@@ -10,6 +13,21 @@ const Navbar = () => {
           <div className="text-2xl tracking-wide">Kori </div>
         </Link>
         <Menu />
+      </div>
+      {/*BIGGER SCREEN*/}
+      <div className="hidden md:flex items-center h-full justify-between gap-8">
+        {/*LEFT*/}
+        <div className="w-1/3">
+          <Link href="/">
+            <Image src="/logo.png" alt="" width={24} height={24} />
+            <div className="text-2xl tracking-wide">Kori </div>
+          </Link>
+        </div>
+        {/*RIGHT*/}
+        <div className="w-2/3 flex items-center justify-between gap-8">
+          <SearchBar />
+          <NavIcons />
+        </div>
       </div>
     </div>
   );
